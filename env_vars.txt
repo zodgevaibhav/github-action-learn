@@ -1,0 +1,9 @@
+RUN_LOCAL=true
+RUNNER_TOKEN=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
+REPO_FULLNAME=https://github.com/zodgevaibhav/github-action-learn.git
+GITHUB_SHA=c8a060c974931e05b08a20a4269bc1c8f9b7fc07
+GITHUB_WORKSPACE=./
+RUNNER_TOOL_CACHE=/opt/hostedtoolcache
+RUNNER_TEMP=/tmp
+RUNNER_TOOL_CACHE=/opt/hostedtoolcache
+
