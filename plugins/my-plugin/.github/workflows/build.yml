@@ -1,0 +1,22 @@
+name: Build and Publish auth
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    needs: common
+
+    strategy:
+      matrix:
+        service: [auth]
+
+    steps:
+      - name: Run Common Workflow
+        uses: ./.github/workflows/common-build.yml
+        with:
+          service: ${{ matrix.service }}
