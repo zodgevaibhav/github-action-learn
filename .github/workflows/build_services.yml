@@ -2,17 +2,13 @@ name: Build and Publish Services
 
 on:
   push:
-    branches:
-      - test-branch
-    paths:
-      - 'services/**'
+    branches: [ "test-branch" ]
 
 jobs:
   build-and-publish-services:
     runs-on: ubuntu-latest
     container:
           image: maven:3.9.6-eclipse-temurin-17
-        
     steps:
       - name: Run Common Workflow for Services
         uses: actions/zodgevaibhav/github-action-learn@v1
