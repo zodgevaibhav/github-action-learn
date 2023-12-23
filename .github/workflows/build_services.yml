@@ -13,6 +13,6 @@ jobs:
 
     steps:
       - name: Run Common Workflow for Services
-        uses: .github/workflows/
+        uses: ./.github/workflows/
         with:
           service_name: 'services/auth'
