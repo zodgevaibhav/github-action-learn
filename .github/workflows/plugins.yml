@@ -11,7 +11,7 @@ jobs:
     container:
           image: maven:3.9.6-eclipse-temurin-17
     steps:
-      - name: Run Common Workflow for Services
+      - name: Run Common Workflow for Plugins
         uses: zodgevaibhav/github-action-learn/ci/actions/scala_build@test-branch
         with:
           service_name: 'plugins/my_plugin'
