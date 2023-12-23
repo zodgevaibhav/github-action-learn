@@ -11,6 +11,6 @@ jobs:
           image: maven:3.9.6-eclipse-temurin-17
     steps:
       - name: Run Common Workflow for Services
-        uses: actions/zodgevaibhav/github-action-learn@v1
+        uses: zodgevaibhav/github-action-learn@v1
         with:
           service_name: 'services/auth'
