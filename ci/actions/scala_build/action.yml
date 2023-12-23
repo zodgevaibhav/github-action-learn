@@ -1,0 +1,35 @@
+name: "Hello World"
+
+inputs:
+  service_name: # id of input
+    description: "Name of service to build"
+    required: true
+    default: "services/auth"
+
+runs:
+    using: 'composite'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build with Maven
+        shell: bash
+        run: mvn -f ${{ inputs.service_name }}/pom.xml clean install
+      - name: Lint Check (Replace with your linting command)
+        shell: bash
+        run: |
+          echo "Performing lint check..."
+          # Add your linting command here
+
+      - name: Build Docker Image
+        shell: bash
+        run: |
+          echo "Building Docker image..."
+      #          docker build -t ${{ matrix.service }}:latest ${{ matrix.service }}
+      - name: Log in to Nexus Repository
+        shell: bash
+        run: |
+          echo "Logging in to Nexus..."
+      #          docker login -u ${{ secrets.NEXUS_USERNAME }} -p ${{ secrets.NEXUS_PASSWORD }} your-nexus-repository-url
+      - name: Push Docker Image to Nexus
+        shell: bash
+        run: |
+          echo "Pushing Docker image to Nexus..."

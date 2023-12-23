@@ -1,0 +1,17 @@
+name: Build and Publish plugins Scala
+
+on:
+  push:
+    branches: [ "test-branch" ]
+    paths:
+      - 'plugins/**'
+jobs:
+  build-and-publish-services:
+    runs-on: ubuntu-latest
+    container:
+          image: maven:3.9.6-eclipse-temurin-17
+    steps:
+      - name: Run Common Workflow for Services
+        uses: zodgevaibhav/github-action-learn/ci/scala_build@test-branch
+        with:
+          service_name: 'plugins/my_plugin'
