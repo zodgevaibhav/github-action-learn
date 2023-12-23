@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+    paths:
       - 'services/**'
 jobs:
   build:
@@ -13,6 +14,7 @@ jobs:
       matrix:
         service:
           - services/auth
+          - plugins/my-plugin
 
     container:
       image: maven:3.9.6-eclipse-temurin-17
