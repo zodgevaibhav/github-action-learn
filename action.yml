@@ -7,8 +7,9 @@ inputs:
     default: "services/auth"
 
 runs:
-    using: "composite"
+    using: 'composite'
     steps:
       - uses: actions/checkout@v3
       - name: Build with Maven
+        shell: bash
         run: mvn -f ${{ inputs.service_name }}/pom.xml clean install
