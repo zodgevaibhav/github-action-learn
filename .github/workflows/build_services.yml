@@ -10,9 +10,11 @@ on:
 jobs:
   build-and-publish-services:
     runs-on: ubuntu-latest
-
+    container:
+          image: maven:3.9.6-eclipse-temurin-17
+        
     steps:
       - name: Run Common Workflow for Services
-        uses: ./.github/workflows/
+        uses: actions/zodgevaibhav/github-action-learn@v1
         with:
           service_name: 'services/auth'
